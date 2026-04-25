@@ -1,0 +1,59 @@
+{
+  "courses": [
+    {
+      "id": "python-foundations",
+      "title": "Python Foundations",
+      "level": 1,
+      "sessions": [
+        {
+          "id": "session-1",
+          "title": "Variables and Values",
+          "questions": [
+            {
+              "id": "py-fdn-s1-q1",
+              "difficulty": "Easy",
+              "promptHtml": "<p>Which line creates a variable named <code>score</code> with the value <code>10</code>?</p>",
+              "choices": [
+                { "html": "<code>score = 10</code>", "correct": true },
+                { "html": "<code>10 = score</code>", "correct": false },
+                { "html": "<code>var score 10</code>", "correct": false },
+                { "html": "<code>score :=: 10</code>", "correct": false }
+              ],
+              "explanationHtml": "<p>Python assignment puts the variable name on the left and the value on the right.</p>"
+            },
+            {
+              "id": "py-fdn-s1-q2",
+              "difficulty": "Medium",
+              "promptHtml": "<p>Select every Python data type shown below.</p>",
+              "choices": [
+                { "html": "<code>str</code>", "correct": true },
+                { "html": "<code>integerify</code>", "correct": false },
+                { "html": "<code>bool</code>", "correct": true },
+                { "html": "<code>list</code>", "correct": true }
+              ],
+              "explanationHtml": "<p><code>str</code>, <code>bool</code>, and <code>list</code> are built-in Python types.</p>"
+            }
+          ]
+        },
+        {
+          "id": "session-2",
+          "title": "Conditionals",
+          "questions": [
+            {
+              "id": "py-fdn-s2-q1",
+              "difficulty": "Easy",
+              "promptHtml": "<p>What keyword starts a conditional branch in Python?</p>",
+              "choices": [
+                { "html": "<code>when</code>", "correct": false },
+                { "html": "<code>if</code>", "correct": true },
+                { "html": "<code>check</code>", "correct": false },
+                { "html": "<code>case</code>", "correct": false }
+              ],
+              "explanationHtml": "<p>Python uses <code>if</code> to run code only when a condition is true.</p>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

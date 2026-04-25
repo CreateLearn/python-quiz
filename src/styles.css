@@ -1,0 +1,25 @@
+html {
+  min-width: 320px;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+code {
+  border-radius: 4px;
+  background: rgba(26, 57, 34, 0.08);
+  padding: 0.1rem 0.3rem;
+}
+
+pre {
+  overflow-x: auto;
+  border-radius: 8px;
+  background: #18251d;
+  color: #f7fff8;
+  padding: 1rem;
+}
