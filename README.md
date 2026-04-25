@@ -113,17 +113,17 @@ The app currently consumes normalized quiz data from `src/data/questions.json`. 
 
 Use this mapping when turning fixture entries into app data:
 
-| Fixture field | App field |
-| --- | --- |
-| `id` | `questions[].id` |
-| `level` | `courses[].level` |
-| `sessions[]` | source metadata, not used for UI grouping |
-| `details.question` | `promptHtml` |
-| `details.choices[].answer` | `choices[].html` |
-| `details.choices[].correct` | `choices[].correct` |
-| `details.difficulty` | `difficulty` |
-| `details.explanation` | `explanationHtml` |
-| `details.tags` | source metadata for review and organization |
+| Fixture field               | App field                                   |
+| --------------------------- | ------------------------------------------- |
+| `id`                        | `questions[].id`                            |
+| `level`                     | `courses[].level`                           |
+| `sessions[]`                | source metadata, not used for UI grouping   |
+| `details.question`          | `promptHtml`                                |
+| `details.choices[].answer`  | `choices[].html`                            |
+| `details.choices[].correct` | `choices[].correct`                         |
+| `details.difficulty`        | `difficulty`                                |
+| `details.explanation`       | `explanationHtml`                           |
+| `details.tags`              | source metadata for review and organization |
 
 ## Contributing Questions
 

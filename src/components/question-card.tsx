@@ -131,11 +131,7 @@ export default function QuestionCard({
         sx={{ justifyContent: 'space-between', gap: 1.5 }}
       >
         <Stack direction="row" sx={{ gap: 1, flexWrap: 'wrap' }}>
-          <Chip
-            color="secondary"
-            icon={<TerminalIcon />}
-            label="Challenge"
-          />
+          <Chip color="secondary" icon={<TerminalIcon />} label="Challenge" />
           <Chip color="info" label={question.difficulty} variant="outlined" />
           {multiChoice && <Chip color="warning" label="Select all" />}
         </Stack>
@@ -217,7 +213,9 @@ export default function QuestionCard({
                   transition:
                     'background-color 150ms ease, border-color 150ms ease, transform 150ms ease',
                   '&:hover': {
-                    borderColor: solved ? 'rgba(15,23,42,0.1)' : 'secondary.main',
+                    borderColor: solved
+                      ? 'rgba(15,23,42,0.1)'
+                      : 'secondary.main',
                     bgcolor: solved ? '#ffffff' : 'rgba(37,99,235,0.05)',
                     transform: solved ? 'none' : 'translateY(-1px)',
                   },
@@ -271,7 +269,9 @@ export default function QuestionCard({
                   transition:
                     'background-color 150ms ease, border-color 150ms ease, transform 150ms ease',
                   '&:hover': {
-                    borderColor: solved ? 'rgba(15,23,42,0.1)' : 'secondary.main',
+                    borderColor: solved
+                      ? 'rgba(15,23,42,0.1)'
+                      : 'secondary.main',
                     bgcolor: solved ? '#ffffff' : 'rgba(37,99,235,0.05)',
                     transform: solved ? 'none' : 'translateY(-1px)',
                   },

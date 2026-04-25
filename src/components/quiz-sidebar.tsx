@@ -33,7 +33,8 @@ export default function QuizSidebar({
   onCourseChange,
   onReset,
 }: QuizSidebarProps) {
-  const progress = totalQuestions > 0 ? (solvedCount / totalQuestions) * 100 : 0;
+  const progress =
+    totalQuestions > 0 ? (solvedCount / totalQuestions) * 100 : 0;
 
   return (
     <Box
@@ -53,7 +54,10 @@ export default function QuizSidebar({
         sx={{ gap: 2.5, p: { xs: 2.5, md: 3 } }}
       >
         <Box>
-          <Typography sx={{ color: '#2563eb', fontWeight: 900 }} variant="overline">
+          <Typography
+            sx={{ color: '#2563eb', fontWeight: 900 }}
+            variant="overline"
+          >
             Create & Learn Lab
           </Typography>
           <Typography component="h1" variant="h3">
@@ -105,10 +109,7 @@ export default function QuizSidebar({
             >
               <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
                 <AutoAwesomeIcon sx={{ color: '#f59e0b', fontSize: 18 }} />
-                <Typography
-                  sx={{ color: '#52677f' }}
-                  variant="caption"
-                >
+                <Typography sx={{ color: '#52677f' }} variant="caption">
                   Points
                 </Typography>
               </Stack>
@@ -127,10 +128,7 @@ export default function QuizSidebar({
             >
               <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
                 <CodeIcon sx={{ color: '#15803d', fontSize: 18 }} />
-                <Typography
-                  sx={{ color: '#52677f' }}
-                  variant="caption"
-                >
+                <Typography sx={{ color: '#52677f' }} variant="caption">
                   Solved
                 </Typography>
               </Stack>

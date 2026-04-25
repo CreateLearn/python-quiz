@@ -29,7 +29,7 @@ pre {
   inset: 0;
   pointer-events: none;
   border-radius: inherit;
-  content: "";
+  content: '';
   opacity: 0;
 }
 
@@ -37,7 +37,11 @@ pre {
   animation: answer-correct-glow 900ms ease-out;
   background:
     linear-gradient(135deg, rgba(34, 197, 94, 0.18), transparent 42%),
-    radial-gradient(circle at 88% 14%, rgba(250, 204, 21, 0.35), transparent 26%);
+    radial-gradient(
+      circle at 88% 14%,
+      rgba(250, 204, 21, 0.35),
+      transparent 26%
+    );
 }
 
 .question-card-wrong {

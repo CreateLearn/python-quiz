@@ -16,6 +16,8 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import QuestionCard from './components/question-card';
+import QuizSidebar from './components/quiz-sidebar';
 import questionsJson from './data/questions.json';
 import { formatHashRoute, parseHashRoute } from './lib/hash-route';
 import { parseQuizData } from './lib/schema';
@@ -31,8 +33,6 @@ import {
   solveQuestion,
   type QuizProgress,
 } from './lib/storage';
-import QuestionCard from './components/question-card';
-import QuizSidebar from './components/quiz-sidebar';
 
 const quizData = parseQuizData(questionsJson);
 const pythonThumbnailUrl = 'https://cdn.create-learn.us/python/python4.jpg';
@@ -68,8 +68,9 @@ export default function App() {
   const [questionIndex, setQuestionIndex] = useState(0);
 
   const selectedCourse =
-    quizData.courses.find((course) => course.id === progress.selectedCourseId) ??
-    quizData.courses[0];
+    quizData.courses.find(
+      (course) => course.id === progress.selectedCourseId,
+    ) ?? quizData.courses[0];
   const selectedSession =
     selectedCourse.sessions.find(
       (session) => session.id === progress.selectedSessionId,
@@ -97,7 +98,10 @@ export default function App() {
         quizData.courses[0];
       const sessionId = course.sessions[0].id;
       const nextProgress = selectSession(progress, course.id, sessionId);
-      window.location.hash = formatHashRoute({ courseId: course.id, sessionId });
+      window.location.hash = formatHashRoute({
+        courseId: course.id,
+        sessionId,
+      });
       persistProgress(nextProgress);
       setQuestionIndex(0);
     },
@@ -362,10 +366,7 @@ export default function App() {
           </Box>
         </Stack>
 
-        <Stack
-          direction={{ xs: 'column', md: 'row' }}
-          sx={{ gap: 1.5, mb: 3 }}
-        >
+        <Stack direction={{ xs: 'column', md: 'row' }} sx={{ gap: 1.5, mb: 3 }}>
           {pythonBenefits.map((benefit) => (
             <Box
               key={benefit.label}
@@ -478,7 +479,9 @@ export default function App() {
               <Button
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
-                disabled={questionIndex === selectedSession.questions.length - 1}
+                disabled={
+                  questionIndex === selectedSession.questions.length - 1
+                }
                 onClick={() =>
                   setQuestionIndex((idx) =>
                     Math.min(selectedSession.questions.length - 1, idx + 1),
