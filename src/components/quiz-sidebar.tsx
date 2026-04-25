@@ -12,29 +12,25 @@ import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import type { QuizCourse, QuizSession } from '../lib/schema';
+import type { QuizCourse } from '../lib/schema';
 
 interface QuizSidebarProps {
   courses: QuizCourse[];
   course: QuizCourse;
-  session: QuizSession;
   score: number;
   solvedCount: number;
   totalQuestions: number;
   onCourseChange: (courseId: string) => void;
-  onSessionChange: (sessionId: string) => void;
   onReset: () => void;
 }
 
 export default function QuizSidebar({
   courses,
   course,
-  session,
   score,
   solvedCount,
   totalQuestions,
   onCourseChange,
-  onSessionChange,
   onReset,
 }: QuizSidebarProps) {
   const progress = totalQuestions > 0 ? (solvedCount / totalQuestions) * 100 : 0;
@@ -64,7 +60,7 @@ export default function QuizSidebar({
             Python Quiz
           </Typography>
           <Typography sx={{ color: '#52677f', mt: 0.75 }}>
-            Choose a session, answer at your pace, and keep your streak on this
+            Choose a level, answer at your pace, and keep your streak on this
             device.
           </Typography>
         </Box>
@@ -78,11 +74,11 @@ export default function QuizSidebar({
                 '&.Mui-focused': { color: '#2563eb' },
               }}
             >
-              Course
+              Level
             </InputLabel>
             <Select
               labelId="course-label"
-              label="Course"
+              label="Level"
               value={course.id}
               onChange={(event) => onCourseChange(event.target.value)}
               sx={{ bgcolor: '#ffffff' }}
@@ -90,31 +86,6 @@ export default function QuizSidebar({
               {courses.map((item) => (
                 <MenuItem key={item.id} value={item.id}>
                   {item.title}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-
-          <FormControl fullWidth size="small">
-            <InputLabel
-              id="session-label"
-              sx={{
-                color: '#52677f',
-                '&.Mui-focused': { color: '#2563eb' },
-              }}
-            >
-              Session
-            </InputLabel>
-            <Select
-              labelId="session-label"
-              label="Session"
-              value={session.id}
-              onChange={(event) => onSessionChange(event.target.value)}
-              sx={{ bgcolor: '#ffffff' }}
-            >
-              {course.sessions.map((item, idx) => (
-                <MenuItem key={item.id} value={item.id}>
-                  {idx + 1}. {item.title}
                 </MenuItem>
               ))}
             </Select>

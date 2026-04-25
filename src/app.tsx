@@ -90,10 +90,14 @@ export default function App() {
     setProgress(saved);
   }, []);
 
-  const chooseSession = useCallback(
-    (courseId: string, sessionId: string) => {
-      const nextProgress = selectSession(progress, courseId, sessionId);
-      window.location.hash = formatHashRoute({ courseId, sessionId });
+  const chooseLevel = useCallback(
+    (courseId: string) => {
+      const course =
+        quizData.courses.find((item) => item.id === courseId) ??
+        quizData.courses[0];
+      const sessionId = course.sessions[0].id;
+      const nextProgress = selectSession(progress, course.id, sessionId);
+      window.location.hash = formatHashRoute({ courseId: course.id, sessionId });
       persistProgress(nextProgress);
       setQuestionIndex(0);
     },
@@ -408,19 +412,10 @@ export default function App() {
             <QuizSidebar
               courses={quizData.courses}
               course={selectedCourse}
-              session={selectedSession}
               score={score}
               solvedCount={solvedCount}
               totalQuestions={selectedSession.questions.length}
-              onCourseChange={(courseId) => {
-                const course =
-                  quizData.courses.find((item) => item.id === courseId) ??
-                  quizData.courses[0];
-                chooseSession(course.id, course.sessions[0].id);
-              }}
-              onSessionChange={(sessionId) => {
-                chooseSession(selectedCourse.id, sessionId);
-              }}
+              onCourseChange={chooseLevel}
               onReset={() => {
                 clearProgress();
                 const nextProgress = selectSession(
@@ -512,7 +507,7 @@ export default function App() {
               Open-source Python practice inspired by Create & Learn curriculum.
             </Typography>
             <Link
-              href="https://github.com/CreateLearn/create-learn-python-quiz"
+              href="https://github.com/CreateLearn/python-quiz"
               target="_blank"
               sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.75 }}
             >

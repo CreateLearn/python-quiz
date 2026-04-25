@@ -1,6 +1,6 @@
 export interface QuizRoute {
   courseId: string;
-  sessionId: string;
+  sessionId?: string;
 }
 
 export function parseHashRoute(hash: string): Partial<QuizRoute> {
@@ -8,15 +8,14 @@ export function parseHashRoute(hash: string): Partial<QuizRoute> {
   const params = new URLSearchParams(value);
 
   return {
-    courseId: params.get('course') ?? undefined,
+    courseId: params.get('level') ?? params.get('course') ?? undefined,
     sessionId: params.get('session') ?? undefined,
   };
 }
 
 export function formatHashRoute(route: QuizRoute): string {
   const params = new URLSearchParams({
-    course: route.courseId,
-    session: route.sessionId,
+    level: route.courseId,
   });
 
   return `#${params.toString()}`;
