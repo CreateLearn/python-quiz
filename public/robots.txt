@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /python-quiz/
+
+Sitemap: https://createlearn.github.io/python-quiz/sitemap.xml

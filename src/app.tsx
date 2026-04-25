@@ -507,7 +507,15 @@ export default function App() {
             }}
           >
             <Typography variant="body2">
-              Open-source Python practice inspired by Create & Learn curriculum.
+              Open-source Python practice inspired by{' '}
+              <Link
+                href="https://www.create-learn.us/python-for-kids"
+                target="_blank"
+                sx={{ color: 'inherit', fontWeight: 700 }}
+              >
+                Create & Learn Python classes for kids
+              </Link>
+              .
             </Typography>
             <Link
               href="https://github.com/CreateLearn/python-quiz"

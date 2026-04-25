@@ -3,11 +3,15 @@
 [![Deploy to GitHub Pages](https://github.com/CreateLearn/python-quiz/actions/workflows/pages.yml/badge.svg)](https://github.com/CreateLearn/python-quiz/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Built with React](https://img.shields.io/badge/React-19-149eca.svg)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6.svg)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.x-3178c6.svg)](https://www.typescriptlang.org/)
 
 A standalone, static Python practice quiz inspired by the Create & Learn Python for AI curriculum. It runs entirely in the browser, stores learner progress in `localStorage`, and can be published directly with GitHub Pages.
 
+Live demo: [createlearn.github.io/python-quiz](https://createlearn.github.io/python-quiz/)
+
 Repository: [github.com/CreateLearn/python-quiz](https://github.com/CreateLearn/python-quiz)
+
+![Create & Learn Python Quiz desktop preview](docs/assets/python-quiz-desktop.svg)
 
 ## Features
 
@@ -17,6 +21,19 @@ Repository: [github.com/CreateLearn/python-quiz](https://github.com/CreateLearn/
 - Sanitized HTML prompts, choices, and explanations for formatted code examples.
 - Versioned local progress storage with a learner-facing reset action.
 - GitHub Pages deployment workflow included.
+
+## For Teachers
+
+Use this quiz as a no-login warmup, review activity, self-paced practice station, or source of remixable Python questions. The app runs fully in the browser, so students can open the public GitHub Pages URL without installing Python or creating an account.
+
+Suggested classroom uses:
+
+- Start class with 5-10 minutes of Python review.
+- Ask students to explain why the correct answer works.
+- Fork the project and adapt questions to a specific unit.
+- Use the fixture format as a student-friendly model for writing clear multiple-choice questions.
+
+The public version is intentionally lightweight. It does not collect student data, require authentication, or send quiz answers to a backend.
 
 ## Project Goals
 
@@ -128,6 +145,8 @@ Use this mapping when turning fixture entries into app data:
 ## Contributing Questions
 
 Question contributions are welcome. Please contribute new or edited questions in the fixture shape above so the bank remains portable and easy to review.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contributor workflow.
 
 Before opening a pull request:
 

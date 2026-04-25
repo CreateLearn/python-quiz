@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="920" viewBox="0 0 430 920" role="img" aria-labelledby="title desc">
+  <title id="title">Create & Learn Python Quiz mobile preview</title>
+  <desc id="desc">A mobile preview of the Python quiz showing the level selector and a sample question.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fcff" />
+      <stop offset="1" stop-color="#f2fff7" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#1e40af" flood-opacity="0.16" />
+    </filter>
+  </defs>
+  <rect width="430" height="920" fill="url(#bg)" />
+  <rect x="18" y="18" width="394" height="58" rx="8" fill="#ffffff" stroke="#dbeafe" />
+  <rect x="34" y="30" width="34" height="34" rx="6" fill="#ffffff" stroke="#93c5fd" />
+  <text x="43" y="53" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#102033">py</text>
+  <text x="82" y="42" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" fill="#102033">Python Skill Builder</text>
+  <text x="82" y="62" font-family="Inter, Arial, sans-serif" font-size="12" fill="#52677f">by Create &amp; Learn</text>
+  <g transform="translate(22 104)">
+    <rect width="386" height="246" rx="8" fill="#ffffff" stroke="#bfdbfe" filter="url(#shadow)" />
+    <text x="22" y="38" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="900" fill="#2563eb">CREATE &amp; LEARN LAB</text>
+    <text x="22" y="76" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900" fill="#102033">Python Quiz</text>
+    <text x="22" y="108" font-family="Inter, Arial, sans-serif" font-size="15" fill="#52677f">Choose a level and answer at your pace.</text>
+    <rect x="22" y="136" width="342" height="44" rx="6" fill="#ffffff" stroke="#bfdbfe" />
+    <text x="38" y="164" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#102033">Level 1</text>
+    <path d="M338 153l8 8 8-8" fill="none" stroke="#2563eb" stroke-width="2" />
+    <rect x="22" y="204" width="342" height="9" rx="4.5" fill="#dbeafe" />
+    <text x="22" y="234" font-family="Inter, Arial, sans-serif" font-size="14" fill="#52677f">0 of 780 solved</text>
+  </g>
+  <g transform="translate(22 378)">
+    <rect width="386" height="474" rx="8" fill="#ffffff" stroke="#e2e8f0" filter="url(#shadow)" />
+    <rect x="20" y="22" width="104" height="32" rx="16" fill="#f3e8ff" />
+    <text x="45" y="43" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" fill="#6b21a8">Challenge</text>
+    <rect x="134" y="22" width="90" height="32" rx="16" fill="#ffffff" stroke="#38bdf8" />
+    <text x="154" y="43" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="#0f766e">Beginner</text>
+    <text x="20" y="82" font-family="Inter, Arial, sans-serif" font-size="14" fill="#52677f">Question 1 of 780</text>
+    <rect x="20" y="104" width="346" height="102" rx="8" fill="#f8fbff" />
+    <rect x="20" y="104" width="5" height="102" rx="2.5" fill="#2563eb" />
+    <text x="42" y="136" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="800" fill="#102033">What is the result of this</text>
+    <text x="42" y="162" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="800" fill="#102033">Python expression?</text>
+    <rect x="42" y="174" width="126" height="26" rx="5" fill="#e0f2fe" />
+    <text x="67" y="193" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#0f172a">5 &gt; 2</text>
+    <rect x="20" y="234" width="346" height="54" rx="8" fill="#eff6ff" stroke="#2563eb" />
+    <circle cx="48" cy="261" r="11" fill="#2563eb" />
+    <text x="44" y="266" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="900" fill="#ffffff">A</text>
+    <text x="78" y="268" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#102033">True</text>
+    <rect x="20" y="304" width="346" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" />
+    <circle cx="48" cy="331" r="11" fill="#e2e8f0" />
+    <text x="44" y="336" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="900" fill="#475569">B</text>
+    <text x="78" y="338" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#102033">False</text>
+    <rect x="20" y="374" width="346" height="54" rx="8" fill="#ffffff" stroke="#e2e8f0" />
+    <circle cx="48" cy="401" r="11" fill="#e2e8f0" />
+    <text x="44" y="406" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="900" fill="#475569">C</text>
+    <text x="78" y="408" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#102033">5</text>
+  </g>
+  <text x="22" y="884" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#102033">No login. Browser-only. Open source.</text>
+</svg>

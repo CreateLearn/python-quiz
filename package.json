@@ -3,7 +3,15 @@
   "version": "0.1.0",
   "private": false,
   "description": "A static Python concepts quiz inspired by Create & Learn curriculum.",
+  "homepage": "https://createlearn.github.io/python-quiz/",
+  "bugs": {
+    "url": "https://github.com/CreateLearn/python-quiz/issues"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CreateLearn/python-quiz.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
