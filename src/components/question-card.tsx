@@ -48,6 +48,8 @@ export default function QuestionCard({
 }: QuestionCardProps) {
   const [error, setError] = useState(false);
   const [showIndicators, setShowIndicators] = useState(false);
+  const [reaction, setReaction] = useState<'correct' | 'wrong' | null>(null);
+  const [pointsPreview, setPointsPreview] = useState<number | null>(null);
   const answers = progress?.answers ?? [];
   const solved = progress?.solved ?? false;
   const correctIndexes = useMemo(() => getCorrectIndexes(question), [question]);
@@ -61,11 +63,35 @@ export default function QuestionCard({
   useEffect(() => {
     setError(false);
     setShowIndicators(solved);
+    setReaction(null);
+    setPointsPreview(null);
   }, [question.id, solved]);
+
+  useEffect(() => {
+    if (!reaction) {
+      return;
+    }
+
+    const timeout = window.setTimeout(() => {
+      setReaction(null);
+      if (reaction === 'correct') {
+        setPointsPreview(null);
+      }
+    }, 900);
+    return () => window.clearTimeout(timeout);
+  }, [reaction]);
 
   return (
     <Box
+      className={
+        reaction === 'correct'
+          ? 'question-card question-card-correct'
+          : reaction === 'wrong'
+            ? 'question-card question-card-wrong'
+            : 'question-card'
+      }
       sx={{
+        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         gap: 2.25,
@@ -74,9 +100,32 @@ export default function QuestionCard({
         borderRadius: 1,
         bgcolor: '#ffffff',
         boxShadow: '0 28px 60px -40px rgba(15, 23, 42, 0.65)',
+        overflow: 'hidden',
         p: { xs: 2, md: 3 },
       }}
     >
+      {pointsPreview != null && (
+        <Box
+          className="points-burst"
+          aria-live="polite"
+          sx={{
+            position: 'absolute',
+            top: 18,
+            right: 20,
+            zIndex: 1,
+            border: '1px solid rgba(34,197,94,0.4)',
+            borderRadius: 1,
+            bgcolor: 'rgba(20,83,45,0.92)',
+            color: '#dcfce7',
+            px: 1.25,
+            py: 0.65,
+            fontWeight: 900,
+            boxShadow: '0 14px 30px -18px rgba(20,83,45,0.9)',
+          }}
+        >
+          +{pointsPreview}
+        </Box>
+      )}
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
         sx={{ justifyContent: 'space-between', gap: 1.5 }}
@@ -260,8 +309,13 @@ export default function QuestionCard({
           onClick={() => {
             setShowIndicators(true);
             if (areAnswersCorrect(answers, correctIndexes)) {
-              onSolved(answers, getPoints(progress?.firstSeenAt ?? Date.now()));
+              const points = getPoints(progress?.firstSeenAt ?? Date.now());
+              setReaction('correct');
+              setPointsPreview(points);
+              onSolved(answers, points);
             } else {
+              setReaction('wrong');
+              setPointsPreview(null);
               setError(true);
             }
           }}

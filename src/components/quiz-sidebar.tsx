@@ -45,24 +45,25 @@ export default function QuizSidebar({
       sx={{
         borderRadius: 1,
         background:
-          'linear-gradient(180deg, #10233f 0%, #16325b 46%, #124432 100%)',
-        boxShadow: '0 24px 56px -30px rgba(15, 23, 42, 0.9)',
-        color: '#f8fafc',
+          'linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(239,248,255,0.94) 48%, rgba(240,253,244,0.94) 100%)',
+        border: '1px solid rgba(37,99,235,0.14)',
+        boxShadow: '0 24px 56px -34px rgba(37, 99, 235, 0.48)',
+        color: '#102033',
         overflow: 'hidden',
       }}
     >
       <Stack
-        divider={<Divider sx={{ borderColor: 'rgba(255,255,255,0.16)' }} />}
+        divider={<Divider sx={{ borderColor: 'rgba(37,99,235,0.12)' }} />}
         sx={{ gap: 2.5, p: { xs: 2.5, md: 3 } }}
       >
         <Box>
-          <Typography sx={{ color: '#facc15' }} variant="overline">
+          <Typography sx={{ color: '#2563eb', fontWeight: 900 }} variant="overline">
             Create & Learn Lab
           </Typography>
           <Typography component="h1" variant="h3">
             Python Quiz
           </Typography>
-          <Typography sx={{ color: 'rgba(248,250,252,0.76)', mt: 0.75 }}>
+          <Typography sx={{ color: '#52677f', mt: 0.75 }}>
             Choose a session, answer at your pace, and keep your streak on this
             device.
           </Typography>
@@ -73,8 +74,8 @@ export default function QuizSidebar({
             <InputLabel
               id="course-label"
               sx={{
-                color: 'rgba(248,250,252,0.82)',
-                '&.Mui-focused': { color: '#facc15' },
+                color: '#52677f',
+                '&.Mui-focused': { color: '#2563eb' },
               }}
             >
               Course
@@ -84,7 +85,7 @@ export default function QuizSidebar({
               label="Course"
               value={course.id}
               onChange={(event) => onCourseChange(event.target.value)}
-              sx={{ bgcolor: 'rgba(255,255,255,0.96)' }}
+              sx={{ bgcolor: '#ffffff' }}
             >
               {courses.map((item) => (
                 <MenuItem key={item.id} value={item.id}>
@@ -98,8 +99,8 @@ export default function QuizSidebar({
             <InputLabel
               id="session-label"
               sx={{
-                color: 'rgba(248,250,252,0.82)',
-                '&.Mui-focused': { color: '#facc15' },
+                color: '#52677f',
+                '&.Mui-focused': { color: '#2563eb' },
               }}
             >
               Session
@@ -109,7 +110,7 @@ export default function QuizSidebar({
               label="Session"
               value={session.id}
               onChange={(event) => onSessionChange(event.target.value)}
-              sx={{ bgcolor: 'rgba(255,255,255,0.96)' }}
+              sx={{ bgcolor: '#ffffff' }}
             >
               {course.sessions.map((item, idx) => (
                 <MenuItem key={item.id} value={item.id}>
@@ -125,16 +126,16 @@ export default function QuizSidebar({
             <Box
               sx={{
                 flex: 1,
-                border: '1px solid rgba(255,255,255,0.16)',
+                border: '1px solid rgba(37,99,235,0.12)',
                 borderRadius: 1,
-                bgcolor: 'rgba(255,255,255,0.08)',
+                bgcolor: 'rgba(255,255,255,0.72)',
                 p: 1.25,
               }}
             >
               <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
-                <AutoAwesomeIcon sx={{ color: '#facc15', fontSize: 18 }} />
+                <AutoAwesomeIcon sx={{ color: '#f59e0b', fontSize: 18 }} />
                 <Typography
-                  sx={{ color: 'rgba(248,250,252,0.72)' }}
+                  sx={{ color: '#52677f' }}
                   variant="caption"
                 >
                   Points
@@ -147,16 +148,16 @@ export default function QuizSidebar({
             <Box
               sx={{
                 flex: 1,
-                border: '1px solid rgba(255,255,255,0.16)',
+                border: '1px solid rgba(34,197,94,0.14)',
                 borderRadius: 1,
-                bgcolor: 'rgba(255,255,255,0.08)',
+                bgcolor: 'rgba(255,255,255,0.72)',
                 p: 1.25,
               }}
             >
               <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
-                <CodeIcon sx={{ color: '#86efac', fontSize: 18 }} />
+                <CodeIcon sx={{ color: '#15803d', fontSize: 18 }} />
                 <Typography
-                  sx={{ color: 'rgba(248,250,252,0.72)' }}
+                  sx={{ color: '#52677f' }}
                   variant="caption"
                 >
                   Solved
@@ -174,13 +175,13 @@ export default function QuizSidebar({
             sx={{
               height: 8,
               borderRadius: 1,
-              bgcolor: 'rgba(255,255,255,0.18)',
+              bgcolor: 'rgba(37,99,235,0.1)',
               '& .MuiLinearProgress-bar': {
-                bgcolor: '#facc15',
+                bgcolor: '#1f8f4d',
               },
             }}
           />
-          <Typography sx={{ color: 'rgba(248,250,252,0.72)' }} variant="body2">
+          <Typography sx={{ color: '#52677f' }} variant="body2">
             {solvedCount} of {totalQuestions} solved
           </Typography>
         </Stack>
@@ -191,11 +192,11 @@ export default function QuizSidebar({
           variant="outlined"
           onClick={onReset}
           sx={{
-            borderColor: 'rgba(255,255,255,0.35)',
-            color: '#ffffff',
+            borderColor: 'rgba(37,99,235,0.22)',
+            color: '#1e3a8a',
             '&:hover': {
-              borderColor: '#ffffff',
-              bgcolor: 'rgba(255,255,255,0.1)',
+              borderColor: '#2563eb',
+              bgcolor: 'rgba(37,99,235,0.06)',
             },
           }}
         >

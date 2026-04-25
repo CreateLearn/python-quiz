@@ -1,8 +1,11 @@
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CodeIcon from '@mui/icons-material/Code';
+import DataObjectIcon from '@mui/icons-material/DataObject';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import SchoolIcon from '@mui/icons-material/School';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -32,6 +35,25 @@ import QuestionCard from './components/question-card';
 import QuizSidebar from './components/quiz-sidebar';
 
 const quizData = parseQuizData(questionsJson);
+const pythonThumbnailUrl = 'https://cdn.create-learn.us/python/python4.jpg';
+
+const pythonBenefits = [
+  {
+    icon: <PsychologyIcon />,
+    label: 'A pathway to AI',
+    text: 'Python is a real-world language that opens the door to artificial intelligence, data science, and modern computing.',
+  },
+  {
+    icon: <DataObjectIcon />,
+    label: 'Projects, not just syntax',
+    text: 'Practice concepts that show up in games, animations, apps, data projects, and creative builds.',
+  },
+  {
+    icon: <RocketLaunchIcon />,
+    label: 'Built for grades 5-12',
+    text: 'A friendly step into text-based coding for students ready to move beyond blocks and build confidence.',
+  },
+];
 
 export default function App() {
   const initialRoute = parseHashRoute(window.location.hash);
@@ -108,10 +130,11 @@ export default function App() {
     <Box
       sx={{
         minHeight: '100vh',
-        backgroundColor: 'background.default',
+        color: '#102033',
+        backgroundColor: '#f7fbff',
         backgroundImage:
-          'linear-gradient(rgba(37,99,235,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(31,143,77,0.055) 1px, transparent 1px), linear-gradient(135deg, #f8fbff 0%, #f3f8f0 52%, #eef5ff 100%)',
-        backgroundSize: '32px 32px, 32px 32px, auto',
+          'linear-gradient(rgba(56,189,248,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(34,197,94,0.11) 1px, transparent 1px), radial-gradient(circle at 16% 10%, rgba(125,211,252,0.38), transparent 30%), radial-gradient(circle at 88% 16%, rgba(187,247,208,0.52), transparent 32%), linear-gradient(135deg, #f8fcff 0%, #eff8ff 46%, #f2fff7 100%)',
+        backgroundSize: '36px 36px, 36px 36px, auto, auto, auto',
       }}
     >
       <Box
@@ -120,8 +143,8 @@ export default function App() {
           position: 'sticky',
           top: 0,
           zIndex: 10,
-          borderBottom: '1px solid rgba(15,23,42,0.1)',
-          bgcolor: 'rgba(255,255,255,0.88)',
+          borderBottom: '1px solid rgba(37,99,235,0.12)',
+          bgcolor: 'rgba(255,255,255,0.86)',
           backdropFilter: 'blur(12px)',
         }}
       >
@@ -144,19 +167,23 @@ export default function App() {
                 width: 36,
                 height: 36,
                 borderRadius: 1,
-                color: '#ffffff',
-                bgcolor: '#12233f',
-                boxShadow: 'inset 0 -4px 0 rgba(244,180,0,0.32)',
+                color: '#0f172a',
+                bgcolor: '#ffffff',
+                border: '1px solid rgba(37,99,235,0.2)',
+                boxShadow:
+                  '0 0 26px rgba(56,189,248,0.24), inset 0 -4px 0 rgba(34,197,94,0.24)',
                 fontWeight: 900,
               }}
             >
               py
             </Box>
             <Box>
-              <Typography sx={{ fontWeight: 900, lineHeight: 1.1 }}>
+              <Typography
+                sx={{ color: '#102033', fontWeight: 900, lineHeight: 1.1 }}
+              >
                 Python Skill Builder
               </Typography>
-              <Typography color="text.secondary" variant="caption">
+              <Typography sx={{ color: '#52677f' }} variant="caption">
                 by Create & Learn
               </Typography>
             </Box>
@@ -174,8 +201,8 @@ export default function App() {
                 gap: 0.5,
                 fontWeight: 700,
                 textDecoration: 'none',
-                color: 'text.primary',
-                '&:hover': { color: 'primary.main' },
+                color: '#1e3a8a',
+                '&:hover': { color: '#1f8f4d' },
               },
             }}
           >
@@ -207,7 +234,7 @@ export default function App() {
             alignItems: { xs: 'stretch', md: 'center' },
             justifyContent: 'space-between',
             gap: 2,
-            mb: 3,
+            mb: 2,
           }}
         >
           <Box>
@@ -221,50 +248,156 @@ export default function App() {
               <Chip
                 color="warning"
                 icon={<CodeIcon />}
-                label="Beginner-friendly Python"
+                label="Python for AI practice"
                 size="small"
               />
             </Stack>
             <Typography component="h1" variant="h2">
-              Practice Python like a coder.
+              Practice Python for AI, data, and real projects.
             </Typography>
             <Typography
-              color="text.secondary"
-              sx={{ maxWidth: 680, mt: 0.75 }}
+              sx={{ maxWidth: 720, mt: 0.75, color: '#3c5168' }}
               variant="body1"
             >
-              Build confidence with quick concept checks, instant feedback, and
-              progress saved on this device.
+              Python is approachable enough for beginners and powerful enough
+              for real-world work. Use these quick challenges to review
+              fundamentals, strengthen text-based coding skills, and get ready
+              for AI, data science, games, apps, and independent projects.
             </Typography>
           </Box>
           <Box
-            aria-hidden
             sx={{
               display: { xs: 'none', md: 'block' },
-              minWidth: 252,
+              position: 'relative',
+              width: 300,
+              minWidth: 300,
               borderRadius: 1,
-              bgcolor: '#111827',
-              color: '#f8fafc',
-              boxShadow: '0 22px 48px -30px rgba(17,24,39,0.85)',
-              p: 2,
-              fontFamily:
-                'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
-              fontSize: 14,
+              bgcolor: 'rgba(255,255,255,0.92)',
+              border: '1px solid rgba(37,99,235,0.16)',
+              color: '#102033',
+              boxShadow:
+                '0 22px 48px -32px rgba(30,64,175,0.45), 0 0 36px rgba(56,189,248,0.18)',
+              overflow: 'hidden',
             }}
           >
-            <Typography
-              component="div"
-              sx={{ color: '#93c5fd', fontFamily: 'inherit', mb: 1 }}
+            <Box
+              component="img"
+              src={pythonThumbnailUrl}
+              alt="Create & Learn Python for AI class thumbnail"
+              sx={{
+                display: 'block',
+                width: '100%',
+                aspectRatio: '16 / 10',
+                objectFit: 'cover',
+              }}
+            />
+            <Box
+              sx={{
+                borderTop: '1px solid rgba(37,99,235,0.14)',
+                bgcolor: 'rgba(248,252,255,0.94)',
+                p: 1.5,
+              }}
             >
-              {'>>> python_quiz.next()'}
-            </Typography>
-            <Typography
-              component="div"
-              sx={{ color: '#86efac', fontFamily: 'inherit' }}
-            >
-              {'score += practice'}
-            </Typography>
+              <Typography
+                component="div"
+                sx={{
+                  color: '#2563eb',
+                  fontFamily:
+                    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+                  fontSize: 13,
+                  mb: 0.75,
+                }}
+              >
+                {'>>> learn_python(real_world=True)'}
+              </Typography>
+              <Typography
+                component="div"
+                sx={{
+                  color: '#15803d',
+                  fontFamily:
+                    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+                  fontSize: 13,
+                  mb: 0.75,
+                }}
+              >
+                {'pathway = ["AI", "Data", "Apps"]'}
+              </Typography>
+              <Typography
+                component="div"
+                sx={{
+                  color: '#fde68a',
+                  fontFamily:
+                    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+                  fontSize: 13,
+                }}
+              >
+                {'practice.unlock(projects)'}
+              </Typography>
+            </Box>
           </Box>
+          <Box
+            sx={{
+              display: { xs: 'block', md: 'none' },
+              borderRadius: 1,
+              border: '1px solid rgba(37,99,235,0.16)',
+              overflow: 'hidden',
+              boxShadow: '0 18px 42px -34px rgba(37,99,235,0.45)',
+            }}
+          >
+            <Box
+              component="img"
+              src={pythonThumbnailUrl}
+              alt="Create & Learn Python for AI class thumbnail"
+              sx={{
+                display: 'block',
+                width: '100%',
+                aspectRatio: '16 / 9',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+        </Stack>
+
+        <Stack
+          direction={{ xs: 'column', md: 'row' }}
+          sx={{ gap: 1.5, mb: 3 }}
+        >
+          {pythonBenefits.map((benefit) => (
+            <Box
+              key={benefit.label}
+              sx={{
+                flex: 1,
+                border: '1px solid rgba(37,99,235,0.14)',
+                borderRadius: 1,
+                bgcolor: 'rgba(255,255,255,0.78)',
+                boxShadow: '0 18px 42px -34px rgba(37,99,235,0.42)',
+                p: 2,
+              }}
+            >
+              <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    placeItems: 'center',
+                    width: 34,
+                    height: 34,
+                    borderRadius: 1,
+                    color: '#15803d',
+                    bgcolor: 'rgba(220,252,231,0.78)',
+                    border: '1px solid rgba(34,197,94,0.18)',
+                  }}
+                >
+                  {benefit.icon}
+                </Box>
+                <Typography sx={{ color: '#102033', fontWeight: 900 }}>
+                  {benefit.label}
+                </Typography>
+              </Stack>
+              <Typography sx={{ color: '#52677f', mt: 1 }} variant="body2">
+                {benefit.text}
+              </Typography>
+            </Box>
+          ))}
         </Stack>
 
         <Stack
@@ -372,7 +505,7 @@ export default function App() {
               alignItems: { xs: 'flex-start', sm: 'center' },
               justifyContent: 'space-between',
               gap: 1.5,
-              color: 'text.secondary',
+              color: '#52677f',
             }}
           >
             <Typography variant="body2">
